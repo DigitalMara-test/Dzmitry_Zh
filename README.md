@@ -17,9 +17,23 @@ We expect that this assignment takes about 2-3 hrs to complete. Feel free to use
 docker run -it --rm -p 5432:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=db --name=postgres-log postgres:17.5
 ```
 
-## Connect to db
+## API
 
+### List logs
+
+```bash
+curl http://localhost:3000/api/logs
 ```
+
+### Create log
+
+```bash
+curl -X POST -H "Content-Type: application/json" http://localhost:3000/api/logs --data '{ "b": "q" }'
+```
+
+## DB schema
+
+```bash
 docker exec -it postgres-log psql --dbname=db --username=user
 
 \d+

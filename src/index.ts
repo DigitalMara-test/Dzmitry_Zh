@@ -1,22 +1,12 @@
-import { PrismaClient } from '@prisma/client'
+import express from 'express'
+import logRoutes from './routes/logs'
 
-const prisma = new PrismaClient()
+const app = express()
+app.use(express.json())
 
-async function main() {
-  try {
-    console.log('Starting...')
-    const logs = await prisma.log.findMany()
-    console.log('Logs before', logs)
-    const log = await prisma.log.create({
-      data: { json: { a: 1 } }
-    })
-    console.log('Created log', log)
-    const newLogs = await prisma.log.findMany()
-    console.log('Logs after', newLogs)
-    console.log('Done!')
-  } catch (err) {
-    console.error(err)
-  }
-}
+app.use('/api/logs', logRoutes)
 
-main()
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+  console.log(`> Running on http://localhost:${PORT}`)
+})
