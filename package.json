@@ -4,21 +4,26 @@
   "description": "TypeScript and PostgreSQL backend for logs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist",
+    "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "prisma:push": "prisma db push"
+    "prisma:push": "prisma db push",
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/supertest": "^6.0.3",
+    "nodemon": "^3.1.10",
     "prisma": "^6.7.0",
+    "supertest": "^7.1.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@prisma/client": "^6.7.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "vitest": "^3.1.3"
   }
 }

@@ -1,9 +1,7 @@
 import express from 'express'
-import { PrismaClient } from '@prisma/client'
+import prisma from '../../prisma'
 
 const router = express.Router()
-
-const prisma = new PrismaClient()
 
 router.get('/', async (req, res) => {
   try {
@@ -26,7 +24,7 @@ router.post('/', async (req, res) => {
     const log = await prisma.log.create({
       data: { json: req.body }
     })
-    res.json(log)
+    res.status(201).json(log)
   } catch (err) {
     console.error(err)
     res.status(400).json({ error: 'Invalid JSON format' })
