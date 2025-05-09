@@ -6,12 +6,6 @@ Start postgres with docker-compose:
 docker-compose up -d
 ```
 
-To stop postgres:
-
-```bash
-docker-compose down
-```
-
 Copy `.env.example` to `.env`:
 
 ```bash
@@ -29,6 +23,12 @@ Run project:
 
 ```bash
 npm run dev
+```
+
+To stop postgres:
+
+```bash
+docker-compose down
 ```
 
 ## Task
@@ -81,12 +81,12 @@ Indexes:
 Access method: heap
 ```
 
-Create a html page to show the data written to the database and a form to enter data.
+### Create a html page to show the data written to the database and a form to enter data.
+
+![screenshots/html.jpg](screenshots/html.jpg)
 
 ### Create a CI pipeline to test the backend.
 
 CI job example: https://github.com/DigitalMara-test/Dzmitry_Zh/actions/runs/14925615793/job/41929709491?pr=3
 
 ![screenshots/ci.jpg](screenshots/ci.jpg)
-
-We expect that this assignment takes about 2-3 hrs to complete. Feel free to use any tools/environment you wish or are comfortable with to accomplish the task if not specifically mentioned otherwise.
