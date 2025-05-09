@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist",
+    "dev": "nodemon src/index.ts",
     "build": "tsc",
     "prisma:push": "prisma db push",
     "test": "vitest run"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/supertest": "^6.0.3",
+    "nodemon": "^3.1.10",
     "prisma": "^6.7.0",
     "supertest": "^7.1.0",
     "typescript": "^5.8.3"
