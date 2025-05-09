@@ -11,10 +11,6 @@ beforeAll(async () => {
   request = supertest(app) as unknown as SuperAgentTest
 })
 
-afterEach(async () => {
-  console.log('After each')
-})
-
 afterAll(async () => {
   server.close()
 })
